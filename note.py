@@ -127,9 +127,34 @@ def creat_note():
             print('Формат ввода неверный!')
 
 
+def note_js(key, num):
+    if num != 0:
+        ds = file.data[key]
+        print('------------- ' + str(num) + ' -------------')
+        print('  Имя заметки: ' + ds['name'])
+        print('     id номер: ' + ds['id'])
+        print('         Дата: ' + timeUnixJson(ds['date']))
+        print('Текст заметки: ' + ds['text'])
+    else:
+        print('Заметок нет')
+
+
+def note_keys(data):
+    d = []
+    for key in data:
+        d.append(key)
+    return d
+
+
+def note_search(search):
+    pass
+
+
 def print_note():
-    for item in file.data.items():
-        print(item)
+    dataK = note_keys(file.data)
+    l = len(dataK)
+    for i in range(1, l):
+        note_js(dataK[i], i)
 
 
 def search_note():

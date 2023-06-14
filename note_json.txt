@@ -1,75 +1,9 @@
 {
-    "note_count": 12,
-    "note_9537": {
-        "id": "9537",
-        "date": 1686679537,
-        "name": "note_9537",
-        "text": "    json.dump(data, fp=open('note_json.txt', 'w'), indent=4)"
-    },
-    "note_9563": {
-        "id": "9563",
-        "date": 1686679563,
-        "name": "note_9563",
-        "text": "\u043f\u0430\u0440\u043e\u043b\u044c Wifi 123456789"
-    },
-    "note_9718": {
-        "id": "9718",
-        "date": 1686679718,
-        "name": "note_9718",
-        "text": "\u041f\u0430\u0440\u043e\u043b\u044c WIFI 454565667"
-    },
-    "note_0037": {
-        "id": "0037",
-        "date": 1686680037,
-        "name": "note_0037",
-        "text": "\u043f\u0430\u0440\u043e\u043b\u044c \u043e\u0442 Wifi rttyuiiy"
-    },
-    "note_80155": {
-        "id": "80155",
-        "date": 1686680155,
-        "name": "note_80155",
-        "text": "\u041f\u0430\u0440\u043e\u043b\u044c \u043e\u0442 wifi ytrtyuu"
-    },
-    "note_80728": {
-        "id": "80728",
-        "date": 1686680728,
-        "name": "note_80728",
-        "text": "ghbkjj55777 87878"
-    },
-    "note_80766": {
-        "id": "80766",
-        "date": 1686680766,
-        "name": "note_80766",
-        "text": "gghghghg9898989 ijj"
-    },
-    "rrrr": {
-        "id": "81006",
-        "date": 1686681006,
-        "name": "rrrr",
-        "text": "tytytytb"
-    },
-    "note_81163": {
-        "id": "81163",
-        "date": 1686681163,
-        "name": "\u0417\u0430\u043c\u0435\u0442\u043a\u0430_1",
-        "text": "\u043f\u0430\u0440\u043e\u043b\u044c \u043f\u0430\u0440\u043e\u043b\u044c"
-    },
-    "note_81367": {
-        "id": "81367",
-        "date": 1686681367,
-        "name": "note_81367",
-        "text": "hhghghgh"
-    },
-    "note_81384": {
-        "id": "81384",
-        "date": 1686681384,
-        "name": "note_81384",
-        "text": "lkjkjj"
-    },
-    "note_81404": {
-        "id": "81404",
-        "date": 1686681404,
-        "name": "\u0417\u0430\u043c\u0435\u0442\u043a\u0430 1",
-        "text": "\u043d\u0435\u043d\u0435\u043d\u0438 \u0433\u0433\u0433 \u0433"
+    "note_count": 1,
+    "note_75814": {
+        "id": "75814",
+        "date": 1686775814,
+        "name": "note_75814",
+        "text": "wdqwdq qwqw w"
     }
 }

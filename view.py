@@ -27,3 +27,4 @@ def interface_1():
 
 def interface_2():
     print(comd_2)
+    print(app.noteCount((file.data['note_count'])))
