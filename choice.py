@@ -1,6 +1,5 @@
 import view
 import note
-import file
 
 
 def check(num):
@@ -27,7 +26,7 @@ def choice_0():
         elif num == '2':
             choice_2()
         elif num == '3':
-            choice_1()
+            choice_3()
         elif num == '4':
             choice_1()
         elif num == '5':
@@ -48,3 +47,6 @@ def choice_2():
     view.interface_2()
     note.print_note()
 
+
+def choice_3():
+    view.interface_3()

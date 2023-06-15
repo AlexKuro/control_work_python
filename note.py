@@ -96,7 +96,7 @@ def creat_note():
         name_note = 'note_' + id
         nameN = 'note_' + id
         print('Имя заметки: ' + name_note)
-        print("Изменить имя заметки.\tДа --> нажмите 'Y'.\n\t\t\t\t\t\tНет -> нажмите 'N'")
+        print("Изменить имя заметки.\tДа --> нажмите 'Y'\n\t\t\t\t\t\tНет -> нажмите 'N'")
         st = input('Изменить имя заметки? -> ')
         if st.lower() == 'y':
             nameN = input('Введите имя заметки: -> ')
@@ -152,13 +152,40 @@ def note_search(search):
 
 def print_note():
     dataK = note_keys(file.data)
-    l = len(dataK)
-    for i in range(1, l):
+    length = len(dataK)
+    for i in range(1, length):
         note_js(dataK[i], i)
 
 
-def search_note():
-    pass
+def print_note_find(dataK):
+    length = len(dataK)
+    for i in range(0, length):
+        note_js(dataK[i], i + 1)
+
+
+def find_elements(key, find):
+    ds = file.data[key]
+    length = len(find)
+    name = ds['name']
+    id = str(ds['id'])
+    if name[:length] == find or id[:length] == find:
+        return key
+    else:
+        return '0'
+
+
+def note_find(find):
+    ds = note_keys(file.data)
+    arr = []
+    for i in range(1, len(ds)):
+        elem = find_elements(ds[i], find)
+        if elem != '0':
+            arr.append(elem)
+    if len(arr) != 0:
+        print(f"\nПо введенным данным '{find}' найдено заметок: --> {len(arr)}")
+        print_note_find(arr)
+    else:
+        print(f"\nПо введенным данным '{find}' заметок нет:")
 
 
 def editing_note():
@@ -167,5 +194,3 @@ def editing_note():
 
 def del_note():
     pass
-
-
