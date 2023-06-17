@@ -2,6 +2,7 @@ import datetime
 import time
 import file
 import json
+import view
 
 
 def timeUnixJson(seconds):
@@ -146,10 +147,6 @@ def note_keys(data):
     return d
 
 
-def note_search(search):
-    pass
-
-
 def print_note():
     dataK = note_keys(file.data)
     length = len(dataK)
@@ -188,8 +185,41 @@ def note_find(find):
         print(f"\nПо введенным данным '{find}' заметок нет:")
 
 
-def editing_note():
-    pass
+def note_check(num):
+    dataK = note_keys(file.data)
+    length = len(dataK)
+    if num < length:
+        return True
+    else:
+        return False
+
+
+def editing_note(numst, comand):
+    dataK = note_keys(file.data)
+    num = int(numst)
+    dataEdit = dataK[num]
+    note_js(dataEdit, num)
+    print(comand)
+    fl = True
+    while fl:
+        num = input("Введите число -> ")
+        if num == '1':
+            nameN = file.data[dataEdit]['name']
+            print('Имя заметки: ' + nameN)
+            nameN = input('Введите новое имя заметки: -> ')
+            file.data[dataEdit]['name'] = nameN
+            file.file_save(file.data)
+            fl = False
+        elif num == '2':
+            nameN = file.data[dataEdit]['text']
+            print('Текст заметки: ' + nameN)
+            nameN = input('Введите новый текст заметки: -> ')
+            file.data[dataEdit]['text'] = nameN
+            file.file_save(file.data)
+            fl = False
+        else:
+            print('Введен не корректный порядковый номер.')
+
 
 
 def del_note():

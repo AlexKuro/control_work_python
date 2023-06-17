@@ -1,6 +1,7 @@
 import file
 import app
 import note
+import choice
 
 comd = '\n\t\t- - - - - Заметки - - - - -'
 comd_0 = ("\tГлавное меню:\n"
@@ -13,6 +14,10 @@ comd_0 = ("\tГлавное меню:\n"
 comd_1 = '\tСоздание заметки:'
 comd_2 = '\tСписок заметок:'
 comd_3 = '\tПоиск заметки:'
+comd_4 = '\tРедактирование заметки:\n'
+comd_4_1 = 'Для изменения заметки введите порядковый номер из списка -> '
+comd_4_2 = ("\tИзменить имя - - - - - - нажмите '1'\n"
+            "\tИзменить текст - - - - - нажмите '2'\n")
 
 
 def interface_0():
@@ -44,6 +49,19 @@ def interface_3():
         if st.lower() == 'y':
             fl = True
         elif st.lower() == 'n':
+            fl = False
+        else:
+            print('Формат ввода неверный!')
+
+
+def interface_4():
+    print(comd_4)
+    choice.choice_2()
+    fl = True
+    while fl:
+        num = input(comd_4_1)
+        if note.note_check(int(num)):
+            note.editing_note(num, comd_4_2)
             fl = False
         else:
             print('Формат ввода неверный!')

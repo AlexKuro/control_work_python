@@ -28,7 +28,7 @@ def choice_0():
         elif num == '3':
             choice_3()
         elif num == '4':
-            choice_1()
+            choice_4()
         elif num == '5':
             choice_1()
         elif num == '9':
@@ -50,3 +50,7 @@ def choice_2():
 
 def choice_3():
     view.interface_3()
+
+
+def choice_4():
+    view.interface_4()
