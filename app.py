@@ -5,7 +5,7 @@ def noteCount(count):
     if count == 0:
         return '\t--> Заметок нет.'
     else:
-        s = '\t--> Найдено заметок: ' + str(count)
+        s = '\n\t--> Найдено заметок: \033[38;2;153;50;204m' + str(count) + '\033[0;0m'
         return s
 
 

@@ -2,7 +2,6 @@ import datetime
 import time
 import file
 import json
-import view
 
 
 def timeUnixJson(seconds):
@@ -87,7 +86,7 @@ def monthEnInt(month):
         return 12
 
 
-def creat_note():
+def create_note():
     fl = True
     while fl:
         date = datetime.datetime.now()
@@ -99,20 +98,24 @@ def creat_note():
         print('Имя заметки: ' + name_note)
         print("Изменить имя заметки.\tДа --> нажмите 'Y'\n\t\t\t\t\t\tНет -> нажмите 'N'")
         st = input('Изменить имя заметки? -> ')
-        if st.lower() == 'y':
-            nameN = input('Введите имя заметки: -> ')
-        elif st.lower() == 'n':
-            print('Имя заметки: ' + name_note + ' ' + unix_time)
-        else:
-            print('Формат ввода неверный!')
+        fl = True
+        while fl:
+            if st.lower() == 'y':
+                nameN = input('Введите имя заметки: -> ')
+                fl = False
+            elif st.lower() == 'n':
+                print('Имя заметки: ' + name_note + ' ' + unix_time)
+                fl = False
+            else:
+                print('Формат ввода неверный!')
 
         text = input('Введите текст заметки: -> ')
-        print('Заметка ' + name_note + ' сохранена.')
+        print("Заметка '" + nameN + "' сохранена.")
         print('\n\tИнформация о заметке')
-        print('  Имя заметки: ' + name_note)
-        print('     id номер: ' + id)
-        print('         Дата: ' + unix_time)
-        print('Текст заметки: ' + text)
+        print('\033[38;2;201;100;59m  Имя заметки: \033[0;0m' + name_note)
+        print('\033[38;2;201;100;59m     id номер: \033[0;0m' + id)
+        print('\033[38;2;201;100;59m         Дата: \033[0;0m' + unix_time)
+        print('\033[38;2;201;100;59mТекст заметки: \033[0;0m' + text)
 
         file.data[name_note] = {'id': id, 'date': time_unix, 'name': nameN, 'text': text}
         file.data['note_count'] += 1
@@ -131,11 +134,11 @@ def creat_note():
 def note_js(key, num):
     if num != 0:
         ds = file.data[key]
-        print('------------- ' + str(num) + ' -------------')
-        print('  Имя заметки: ' + ds['name'])
-        print('     id номер: ' + ds['id'])
-        print('         Дата: ' + timeUnixJson(ds['date']))
-        print('Текст заметки: ' + ds['text'])
+        print('\033[38;2;153;50;204m------------- ' + str(num) + ' -------------\033[0;0m')
+        print('\033[38;2;201;100;59m  Имя заметки\033[0;0m: ' + ds['name'])
+        print('\033[38;2;201;100;59m     id номер\033[0;0m: ' + ds['id'])
+        print('\033[38;2;201;100;59m         Дата\033[0;0m: ' + timeUnixJson(ds['date']))
+        print('\033[38;2;201;100;59mТекст заметки\033[0;0m: ' + ds['text'])
     else:
         print('Заметок нет')
 
@@ -221,6 +224,12 @@ def editing_note(numst, comand):
             print('Введен не корректный порядковый номер.')
 
 
-
-def del_note():
-    pass
+def del_note(numst):
+    dataK = note_keys(file.data)
+    num = int(numst)
+    dataEdit = dataK[num]
+    note_js(dataEdit, num)
+    del file.data[dataEdit]
+    file.data['note_count'] -= 1
+    print('Заметка удалена')
+    file.file_save(file.data)
