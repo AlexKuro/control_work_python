@@ -95,7 +95,7 @@ def create_note():
         id = str(time_unix)[5:10]
         name_note = 'note_' + id
         nameN = 'note_' + id
-        print('Имя заметки: ' + name_note)
+        print('\033[38;2;201;100;59mИмя заметки: \033[0;0m' + name_note)
         print("Изменить имя заметки.\tДа --> нажмите 'Y'\n\t\t\t\t\t\tНет -> нажмите 'N'")
         st = input('Изменить имя заметки? -> ')
         fl = True
@@ -104,13 +104,13 @@ def create_note():
                 nameN = input('Введите имя заметки: -> ')
                 fl = False
             elif st.lower() == 'n':
-                print('Имя заметки: ' + name_note + ' ' + unix_time)
+                print('\033[38;2;201;100;59mИмя заметки: \033[0;0m' + name_note + ' ' + unix_time)
                 fl = False
             else:
                 print('Формат ввода неверный!')
 
         text = input('Введите текст заметки: -> ')
-        print("Заметка '" + nameN + "' сохранена.")
+        print("\033[38;2;201;100;59mЗаметка \033[0;0m'" + nameN + "' \033[38;2;201;100;59mсохранена.\033[0;0m")
         print('\n\tИнформация о заметке')
         print('\033[38;2;201;100;59m  Имя заметки: \033[0;0m' + name_note)
         print('\033[38;2;201;100;59m     id номер: \033[0;0m' + id)
